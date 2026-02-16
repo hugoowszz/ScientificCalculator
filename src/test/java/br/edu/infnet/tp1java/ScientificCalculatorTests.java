@@ -67,6 +67,41 @@ class ScientificCalculatorTests {
         assertEquals(resultadoEsperado, resultadoSen);
     }
 
+    @Test
+    void testMultiply() {
+        double resultadoEsperado = 10;
+
+        double resultadoMultiplicacao = calculator.multiply(5,2);
+
+        assertEquals(resultadoEsperado, resultadoMultiplicacao);
+    }
+
+    @Test
+    void testPower() {
+        double resultadoEsperado = 256;
+
+        double resultadoPower = calculator.power(2,8);
+
+        assertEquals(resultadoEsperado, resultadoPower);
+    }
+
+    @Test
+    void testCalcCos() {
+        double resultadoEsperado = 0.8660254037844387;
+
+        double  resultadoCos = calculator.cos(30);
+
+        assertEquals(resultadoEsperado, resultadoCos, 0.0000000000000001);
+    }
+
+    @Test
+    void testDivide() {
+        double resultadoEsperado = 3;
+
+        double resultadoDivisao = calculator.divide(9,3);
+
+        assertEquals(resultadoEsperado, resultadoDivisao);
+    }
     // ----- Testes de erro -----
 
     @Test
@@ -81,6 +116,13 @@ class ScientificCalculatorTests {
     void testDivideByZero() {
         assertThrows(IllegalArgumentException.class, () -> {
             calculator.divide(1,0);
+        });
+    }
+
+    @Test
+    void testNegativeLog() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.log(-1);
         });
     }
 

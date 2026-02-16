@@ -10,7 +10,6 @@ public class Tp1javaApplication {
 		SpringApplication.run(Tp1javaApplication.class, args);
         ScientificCalculator calculator = new ScientificCalculator();
 
-        System.out.println(calculator.log(10));
 	}
 
 }
